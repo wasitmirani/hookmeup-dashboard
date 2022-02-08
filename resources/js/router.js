@@ -66,6 +66,11 @@ const routes = [{
         path: "/update/event/:id",
         component: () => setComponent("user/Users")
     },
+    {
+        path: "/categories",
+        component: () => setComponent("Category/categories")
+    },
+
 
 
 ]

@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -45,6 +46,7 @@ Route::prefix('article')->group(function () {
     Route::get('/delete/{id?}',[ArticleController::class,'deleteArticle']);
 });
 
+Route::resource('category', CategoryController::class);
 
 
 Route::prefix('blog')->group(function () {
@@ -74,7 +76,7 @@ Route::prefix('app')->group(function () {
     Route::get('/articles',[ArticleController::class,'getArticles']);
     Route::get('/blogs',   [BlogController::class,'getBlogs']);
     Route::get('/events',  [EventController::class,'getEvents']);
-
+    Route::get('/categories',  [CategoryController::class, 'getAllCategories']);
     Route::group(['prefix' => 'auth'], function () {
         Route::post('login', [AuthController::class,'login']);
         Route::post('signup', [AuthController::class,'signup']);
