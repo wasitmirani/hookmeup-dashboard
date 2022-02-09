@@ -24,7 +24,8 @@ class Article extends Model
     }
     public function getCreatedAtAttribute($value)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('Y-m-d');
+        return date('d-m-Y', strtotime($value));
+
     }
     public function postArticle($request,$type="create"){
 
