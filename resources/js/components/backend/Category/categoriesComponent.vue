@@ -157,6 +157,7 @@ import Breadcrumb from "../components/Breadcrumb";
              }
 
          },
+        
          openModal(){
              this.modal_active = true;
          },

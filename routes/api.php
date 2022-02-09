@@ -73,6 +73,8 @@ Route::prefix('event')->group(function () {
 Route::prefix('app')->group(function () {
 
 
+
+
     Route::get('/articles',[ArticleController::class,'getArticles']);
     Route::get('/blogs',   [BlogController::class,'getBlogs']);
     Route::get('/events',  [EventController::class,'getEvents']);

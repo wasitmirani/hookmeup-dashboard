@@ -33,6 +33,7 @@ class BlogController extends Controller
         ];
         return response()->json(['blogs'=>$blogs,'articles'=>$articles,'events'=>$events,'users'=>$users]);
     }
+   
     public function getBlogs()
     {
         //

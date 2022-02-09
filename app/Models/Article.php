@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Article extends Model
 {
@@ -20,6 +21,10 @@ class Article extends Model
         return asset('/img/articles/'.$value);
         else
         return asset('/img/articles/default.png');
+    }
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('Y-m-d');
     }
     public function postArticle($request,$type="create"){
 
